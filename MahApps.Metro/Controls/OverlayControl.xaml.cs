@@ -9,6 +9,11 @@ namespace MahApps.Metro.Controls
     /// </summary>
     public partial class OverlayControl : UserControl
     {
+        #region Constructors & Inits
+
+        /// <summary>
+        /// Creates and instance of the control
+        /// </summary>
         public OverlayControl()
         {
             InitializeComponent();
@@ -16,6 +21,13 @@ namespace MahApps.Metro.Controls
             DataContext = this;
         }
 
+        #endregion
+
+        #region Dependency properties
+
+        /// <summary>
+        /// Sets or gets the opacity of the control
+        /// </summary>
         public double OverlayOpacity
         {
             get { return (double) GetValue(OverlayOpacityProperty); }
@@ -27,6 +39,9 @@ namespace MahApps.Metro.Controls
             DependencyProperty.Register("OverlayOpacity", typeof (double), typeof (OverlayControl),
                 new PropertyMetadata(default(double)));
 
+        /// <summary>
+        /// Sets or gets the background color of the control
+        /// </summary>
         public Brush OverlayBackground
         {
             get { return (Brush) GetValue(OverlayBackgroundProperty); }
@@ -38,6 +53,9 @@ namespace MahApps.Metro.Controls
             DependencyProperty.Register("OverlayBackground", typeof (Brush), typeof (OverlayControl),
                 new PropertyMetadata(default(Brush)));
 
+        /// <summary>
+        /// Sets or gets the foreground color of the text of the control
+        /// </summary>
         public Brush OverlayForeground
         {
             get { return (Brush) GetValue(OverlayForegroundProperty); }
@@ -49,6 +67,9 @@ namespace MahApps.Metro.Controls
             DependencyProperty.Register("OverlayForeground", typeof (Brush), typeof (OverlayControl),
                 new PropertyMetadata(default(Brush)));
 
+        /// <summary>
+        /// Sets or gets the text displayed on the control
+        /// </summary>
         public string OverlayText
         {
             get { return (string) GetValue(OverlayTextProperty); }
@@ -60,6 +81,9 @@ namespace MahApps.Metro.Controls
             DependencyProperty.Register("OverlayText", typeof (string), typeof (OverlayControl),
                 new PropertyMetadata(default(string)));
 
+        /// <summary>
+        /// Sets or gets the font size of the text of the control
+        /// </summary>
         public double OverlayFontSize
         {
             get { return (double) GetValue(OverlayFontSizeProperty); }
@@ -70,8 +94,10 @@ namespace MahApps.Metro.Controls
         public static readonly DependencyProperty OverlayFontSizeProperty =
             DependencyProperty.Register("OverlayFontSize", typeof (double), typeof (OverlayControl),
                 new PropertyMetadata(default(double)));
-        
 
+        /// <summary>
+        /// Sets or gets the font weight of the text of the control
+        /// </summary>
         public FontWeight OverlayFontWeight
         {
             get { return (FontWeight) GetValue(OverlayFontWeightProperty); }
@@ -82,5 +108,7 @@ namespace MahApps.Metro.Controls
         public static readonly DependencyProperty OverlayFontWeightProperty =
             DependencyProperty.Register("OverlayFontWeight", typeof (FontWeight), typeof (OverlayControl),
                 new PropertyMetadata(default(FontWeight)));
+
+        #endregion
     }
 }
