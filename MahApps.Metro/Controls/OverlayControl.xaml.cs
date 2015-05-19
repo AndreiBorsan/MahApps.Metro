@@ -109,6 +109,20 @@ namespace MahApps.Metro.Controls
             DependencyProperty.Register("OverlayFontWeight", typeof (FontWeight), typeof (OverlayControl),
                 new PropertyMetadata(default(FontWeight)));
 
+        /// <summary>
+        /// Sets or gets the visibility of the progress ring
+        /// </summary>
+        public bool IsOverlayProgressRingVisible
+        {
+            get { return (bool)GetValue(IsOverlayProgressRingVisibleProperty); }
+            set { SetValue(IsOverlayProgressRingVisibleProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for IsOverlayProgressRingVisible.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty IsOverlayProgressRingVisibleProperty =
+            DependencyProperty.Register("IsOverlayProgressRingVisible", typeof(bool), typeof(OverlayControl),
+                new PropertyMetadata(default(bool)));
+
         #endregion
     }
 }
